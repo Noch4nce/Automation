@@ -1,5 +1,10 @@
+#include <MsgBoxConstants.au3>
+
 #RequireAdmin
 AutoItSetOption('MouseCoordMode', 0)
+
+BlockInput(1)
+SplashOff()
 
 Run(@ScriptDir & "\winrar.exe")
 
@@ -16,3 +21,8 @@ ControlClick("Установка WinRAR", "Готово", "Button1")
 
 WinWaitActive("WinRAR", "Кнопки навигации")
 MouseClick('primary', 867, 15, 1, 0)
+
+BlockInput(0)
+MsgBox(0, 'Installed', 'WinRAR was installed')
+
+Exit
